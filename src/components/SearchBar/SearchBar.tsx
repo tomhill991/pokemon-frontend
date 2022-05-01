@@ -13,9 +13,16 @@ const SearchBar = ({ pokemons, large } : {
         if(search === '') {
             setSuggestedPokemons([])
         } else {
-            const filterPokemonsToGetSuggestedPokemons = pokemons.filter(pokemon => {
-                return pokemon.name.toLowerCase().includes(search.toLowerCase()) && pokemon
-            })
+            const filterPokemonsToGetSuggestedPokemons:IAPIPokemons = []
+
+            for(let i = 0; i < pokemons.length; i ++) {
+                if(filterPokemonsToGetSuggestedPokemons.length > 4) break
+                const pokemon = pokemons[i]
+                if(pokemon.name.toLowerCase().includes(search.toLowerCase())) {
+                    filterPokemonsToGetSuggestedPokemons.push(pokemon)
+                }
+            }
+
             setSuggestedPokemons(filterPokemonsToGetSuggestedPokemons)
         }
     }, [search, pokemons])
@@ -23,9 +30,12 @@ const SearchBar = ({ pokemons, large } : {
     return (
         <>
             <input type="search" onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)} />
-            <Suggestions
-                suggestedPokemons={suggestedPokemons}
-            />
+            {
+                suggestedPokemons.length > 0 &&
+                <Suggestions
+                    suggestedPokemons={suggestedPokemons}
+                />
+            }
         </>
     )
 }
