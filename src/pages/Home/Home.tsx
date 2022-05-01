@@ -1,16 +1,15 @@
 import SearchBar from '../../components/SearchBar/SearchBar'
+import { IAPIPokemons } from '../../interfaces'
 
 function Home({ pokemons } : {
-    pokemons: Array<{
-        name: string,
-        url: string
-    }>
+    pokemons: IAPIPokemons
 }) {
     return (
         <>
             <h1>Did Get To Catcheth Those Folk All!</h1>
             <SearchBar
-
+                large
+                pokemons={pokemons}
             />
         </>
     )

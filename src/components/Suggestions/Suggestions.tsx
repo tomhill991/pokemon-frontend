@@ -1,5 +1,8 @@
+import { IAPIPokemons } from "../../interfaces"
 
-const Suggestions = (props:any) => {
+const Suggestions = ({ suggestedPokemons } : {
+    suggestedPokemons: IAPIPokemons
+}) => {
     return (
         <></>
     )

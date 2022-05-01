@@ -1,8 +1,7 @@
+import { IAPIPokemons } from "../../interfaces"
+
 function Search({ pokemons } : {
-    pokemons: Array<{
-        name: string,
-        url: string
-    }>
+    pokemons: IAPIPokemons
 }) {
     return (
         <>SEARCH</>
