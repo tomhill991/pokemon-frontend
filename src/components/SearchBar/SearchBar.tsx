@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { IAPIPokemons } from '../../interfaces'
 import { Suggestions } from '..'
 
@@ -8,6 +9,8 @@ const SearchBar = ({ pokemons, large } : {
 }) => {
     const [search, setSearch] = useState<string>('')
     const [suggestedPokemons, setSuggestedPokemons] = useState<IAPIPokemons>([])
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         if(search === '') {
@@ -27,9 +30,17 @@ const SearchBar = ({ pokemons, large } : {
         }
     }, [search, pokemons])
 
+    const handleSearchSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        navigate(`../search?pokemon=${search}`, { replace: true })
+    }
+
     return (
         <>
-            <input type="search" onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)} />
+            <div className="search-container">
+                <input type="search" onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)} />
+                <button onClick={handleSearchSubmit}>+</button>
+            </div>
             {
                 suggestedPokemons.length > 0 &&
                 <Suggestions
