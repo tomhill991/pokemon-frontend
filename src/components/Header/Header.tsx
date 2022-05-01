@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-const Header = (props:any) => {
+const Header = () => {
     const navigate = useNavigate()
 
     return (
