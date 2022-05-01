@@ -1,2 +1,7 @@
 @import './home';
 @import './search';
+@import '../config/mixins';
+
+body {
+    background-color: $grey;
+}
