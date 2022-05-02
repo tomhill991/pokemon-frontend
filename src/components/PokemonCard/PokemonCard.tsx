@@ -1,6 +1,6 @@
 import { IPokemon } from "../../interfaces"
 
-const Card = ({ pokemon } : {
+const PokemonCard = ({ pokemon } : {
     pokemon: IPokemon
 }) => {
     return (
@@ -17,4 +17,4 @@ const Card = ({ pokemon } : {
     )
 }
 
-export default Card
+export default PokemonCard

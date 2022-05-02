@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Card, NotFound, SearchBar, SpinningLoader } from '../../components'
+import { PokemonCard, NotFound, SearchBar, SpinningLoader } from '../../components'
 import { IAPIPokemons, IPokemon } from "../../interfaces"
 import axios from 'axios'
 import { useSearchParams } from "react-router-dom";
@@ -39,7 +39,7 @@ function Search({ pokemons } : {
             />
             {
                 pokemon ?
-                    <Card pokemon={pokemon} />
+                    <PokemonCard pokemon={pokemon} />
                 :
                     <NotFound errorMessage={errorMessage}/>
             }

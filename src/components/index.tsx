@@ -1,4 +1,4 @@
-import Card from './Card/Card'
+import PokemonCard from './PokemonCard/PokemonCard'
 import Header from './Header/Header'
 import NotFound from './NotFound/NotFound'
 import SearchBar from './SearchBar/SearchBar'
@@ -6,7 +6,7 @@ import SpinningLoader from './SpinningLoader/SpinningLoader'
 import Suggestions from './Suggestions/Suggestions'
 
 export {
-    Card,
+    PokemonCard,
     Header,
     NotFound,
     SearchBar,
