@@ -4,13 +4,13 @@ const Header = () => {
     const navigate = useNavigate()
 
     return (
-        <div className="header">
+        <header className="header">
             <img
                 onClick={() => navigate('../', { replace: true })}
                 src="/pokeball.png"
                 alt="Pokemon ball"
             />
-        </div>
+        </header>
     )
 }
 
