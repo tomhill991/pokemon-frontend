@@ -1,21 +1,19 @@
-import { IAPIPokemons } from "../../interfaces"
-import { Link } from 'react-router-dom'
+import { IAPIPokemons, IAPIPokemon } from "../../interfaces"
 
-const Suggestions = ({ suggestedPokemons } : {
-    suggestedPokemons: IAPIPokemons
+const Suggestions = ({ suggestedPokemons, showSuggestedPokemon } : {
+    suggestedPokemons: IAPIPokemons,
+    showSuggestedPokemon: (suggestedPokemon: IAPIPokemon) => void
 }) => {
     return (
         <>
         <ul className="suggestions-container">
             {
                 suggestedPokemons.map((suggestedPokemon, index) => (
-                    <li>
-                        <Link
-                            to={`search?pokemon=${suggestedPokemon.name}`}
-                            key={index}
-                        >
-                            {suggestedPokemon.name}
-                        </Link>
+                    <li
+                        key={index}
+                        onClick={() => showSuggestedPokemon(suggestedPokemon)}
+                    >
+                        { suggestedPokemon.name }
                     </li>
                 ))
             }

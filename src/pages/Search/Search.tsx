@@ -10,7 +10,7 @@ function Search({ pokemons } : {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [errorMessage, setErrorMessage] = useState<string>('')
-    const [searchParams] = useSearchParams()
+    const [searchParams, setSearchParams] = useSearchParams()
 
     useEffect(() => {
         async function fetchPokemon() {
@@ -25,8 +25,11 @@ function Search({ pokemons } : {
                 setLoading(false)
             }
         }
+
         fetchPokemon()
     }, [searchParams])
+
+
 
     if(loading) {
         return <SpinningLoader />
@@ -36,6 +39,13 @@ function Search({ pokemons } : {
         <main className="search">
             <SearchBar
                 pokemons={pokemons}
+                searchForNewPokemon={(pokemonName) => {
+                    setLoading(true)
+                    setPokemon(null)
+                    setSearchParams({
+                        pokemon: pokemonName
+                    })
+                }}
             />
             {
                 pokemon ?

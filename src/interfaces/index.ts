@@ -1,4 +1,4 @@
-interface IAPIPokemon {
+export interface IAPIPokemon {
     name: string;
     url: string;
 }
