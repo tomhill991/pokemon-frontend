@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Header } from './components'
 import { Home, Search } from './pages'
 
+
 function App() {
   const [pokemons, setPokemons] = useState([])
 
@@ -13,7 +14,7 @@ function App() {
         const { data } = await axios.get(process.env.REACT_APP_POKE_API + '/pokemon?limit=100000000')
         setPokemons(data.results)
       } catch(error) {
-        console.error(error, 'error')
+        console.error(error)
       }
     }
 
