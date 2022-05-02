@@ -35,8 +35,7 @@ const SearchBar = ({ pokemons, large, searchForNewPokemon } : {
     }
 
     const handleShowSuggestedPokemon = (suggestedPokemon: IAPIPokemon) => {
-        setSearch(suggestedPokemon.name)
-        setSuggestedPokemons([])
+        searchForNewPokemon(suggestedPokemon.name)
     }
 
     return (

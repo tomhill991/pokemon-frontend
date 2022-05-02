@@ -12,6 +12,7 @@
 
     li {
         font-size: 24px;
+        cursor: pointer;
 
         &:not(:last-of-type) {
             margin-bottom: 12px;
