@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { SearchBar, Card, SpinningLoader } from '../../components'
+import { Card, NotFound, SearchBar, SpinningLoader } from '../../components'
 import { IAPIPokemons, IPokemon } from "../../interfaces"
 import axios from 'axios'
 import { useSearchParams } from "react-router-dom";
@@ -9,6 +9,7 @@ function Search({ pokemons } : {
 }) {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
+    const [errorMessage, setErrorMessage] = useState<string>('')
     const [searchParams] = useSearchParams()
 
     useEffect(() => {
@@ -18,7 +19,8 @@ function Search({ pokemons } : {
                 const { data } = await axios.get(process.env.REACT_APP_API_URL + '/pokemons/' + pokemonName)
                 setLoading(false)
                 setPokemon(data)
-            } catch(err) {
+            } catch(err: any) {
+                setErrorMessage(err.message)
                 setLoading(false)
                 console.error(err, 'err')
             }
@@ -39,7 +41,7 @@ function Search({ pokemons } : {
                 pokemon ?
                     <Card pokemon={pokemon} />
                 :
-                    <h1>NOTHING HERE</h1>
+                    <NotFound errorMessage={errorMessage}/>
             }
         </>
     )
