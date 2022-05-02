@@ -15,13 +15,17 @@ function Search({ pokemons } : {
     useEffect(() => {
         async function fetchPokemon() {
             try {
+                if(!searchParams.get('pokemon')) {
+                    setLoading(false)
+                    return
+                }
                 const pokemonName = searchParams.get('pokemon')
                 const { data } = await axios.get(process.env.REACT_APP_API_URL + '/pokemons/' + pokemonName)
                 setLoading(false)
                 setPokemon(data)
             } catch(err: any) {
                 const { response } = err
-                setErrorMessage(response.data.message)
+                setErrorMessage('Not hath found: ' + response.data.message)
                 setLoading(false)
             }
         }
@@ -51,6 +55,7 @@ function Search({ pokemons } : {
                 pokemon ?
                     <PokemonCard pokemon={pokemon} />
                 :
+                    errorMessage &&
                     <NotFound errorMessage={errorMessage}/>
             }
         </main>
