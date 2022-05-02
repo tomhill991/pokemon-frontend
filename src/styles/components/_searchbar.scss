@@ -1,1 +1,66 @@
 
+.search-wrapper {
+    margin: 0 auto;
+    position: relative;
+
+    .search-container {
+        height: 50px;
+        position: relative;
+
+        input {
+            background-color: $yellow;
+            height: 100%;
+            width: 100%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+
+            font-size: 24px;
+            padding: 16px 0;
+            padding-left: 24px;
+            padding-right: 48px;
+        }
+
+        button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            border-radius: 50%;
+            color: white;
+            background-color: $red;
+            width: 34px;
+            height: 34px;
+            font-size: 28px;
+        }
+    }
+
+    &.large {
+         @include tablet-portrait {
+            width: 85%;
+            max-width: 860px;
+        }
+        .search-container {
+            height: 76px;
+            margin-top: 56px;
+
+            @include tablet-portrait {
+                margin-top: 48px;
+                height: 86px;
+            }
+
+            input {
+                font-size: 36px;
+                padding-left: 24px;
+                padding-right: 78px;
+            }
+
+            button {
+                width: 60px;
+                height: 60px;
+                font-size: 48px;
+            }
+        }
+    }
+}
+

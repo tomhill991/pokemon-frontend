@@ -38,19 +38,21 @@ const SearchBar = ({ pokemons, large } : {
 
     return (
         <>
-            <div className="search-container">
-                <input
-                    type="search"
-                    onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)}
-                />
-                <button onClick={handleSearchSubmit}>+</button>
+            <div className={"search-wrapper" + (large ? ' large' : '')}>
+                <div className="search-container">
+                    <input
+                        type="search"
+                        onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)}
+                    />
+                    <button onClick={handleSearchSubmit}>+</button>
+                </div>
+                {
+                    suggestedPokemons.length > 0 &&
+                    <Suggestions
+                        suggestedPokemons={suggestedPokemons}
+                    />
+                }
             </div>
-            {
-                suggestedPokemons.length > 0 &&
-                <Suggestions
-                    suggestedPokemons={suggestedPokemons}
-                />
-            }
         </>
     )
 }

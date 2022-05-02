@@ -24,14 +24,14 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home pokemons={pokemons}/> }/>
-        <Route path="search" element={<Search pokemons={pokemons}/> } />
-        <Route
-          path="*"
-          element={<Navigate to="/" replace />}
-        />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home pokemons={pokemons}/> }/>
+          <Route path="search" element={<Search pokemons={pokemons}/> } />
+          <Route
+            path="*"
+            element={<Navigate to="/" replace />}
+          />
+        </Routes>
     </>
   );
 }

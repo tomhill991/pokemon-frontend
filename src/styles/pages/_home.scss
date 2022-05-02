@@ -1,0 +1,11 @@
+main.home {
+    padding-top: 46px;
+
+    @include tablet-portrait {
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

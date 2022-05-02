@@ -5,3 +5,15 @@
 body {
     background-color: $grey;
 }
+
+main {
+    min-height: calc( 100vh - 80px );
+
+    @include tablet-portrait {
+        min-height: calc( 100vh - 102px );
+    }
+}
+
+h1 {
+    margin: 0 auto;
+}

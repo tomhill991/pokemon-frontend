@@ -1,1 +1,15 @@
 @import './reset';
+
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 44px;
+
+    @include tablet-portrait {
+        font-size: 48px;
+        line-height: 58px;
+        max-width: 483px;
+    }
+}

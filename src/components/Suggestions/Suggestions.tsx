@@ -6,16 +6,20 @@ const Suggestions = ({ suggestedPokemons } : {
 }) => {
     return (
         <>
+        <ul className="suggestions-container">
             {
                 suggestedPokemons.map((suggestedPokemon, index) => (
-                    <Link
-                        to={`search?pokemon=${suggestedPokemon.name}`}
-                        key={index}
-                    >
-                        {suggestedPokemon.name}
-                    </Link>
+                    <li>
+                        <Link
+                            to={`search?pokemon=${suggestedPokemon.name}`}
+                            key={index}
+                        >
+                            {suggestedPokemon.name}
+                        </Link>
+                    </li>
                 ))
             }
+        </ul>
         </>
     )
 }

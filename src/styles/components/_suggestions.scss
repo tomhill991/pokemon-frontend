@@ -1,0 +1,21 @@
+.suggestions-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 16px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    li {
+        font-size: 24px;
+
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+    }
+
+}

@@ -20,9 +20,9 @@ function Search({ pokemons } : {
                 setLoading(false)
                 setPokemon(data)
             } catch(err: any) {
-                setErrorMessage(err.message)
+                const { response } = err
+                setErrorMessage(response.data.message)
                 setLoading(false)
-                console.error(err, 'err')
             }
         }
         fetchPokemon()
@@ -33,7 +33,7 @@ function Search({ pokemons } : {
     }
 
     return (
-        <>
+        <main className="search">
             <SearchBar
                 pokemons={pokemons}
             />
@@ -43,7 +43,7 @@ function Search({ pokemons } : {
                 :
                     <NotFound errorMessage={errorMessage}/>
             }
-        </>
+        </main>
     )
 }
 

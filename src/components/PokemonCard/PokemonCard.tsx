@@ -10,8 +10,10 @@ const PokemonCard = ({ pokemon } : {
                 src={pokemon.sprite}
                 alt={'image of ' + pokemon.name}
             />
-            <span>{ pokemon.name }</span>
-            <span>{ pokemon.description }</span>
+            <div className="text">
+                <h2>{ pokemon.name[0].toUpperCase() + pokemon.name.slice(1, pokemon.name.length) }</h2>
+                <p>{ pokemon.description }</p>
+            </div>
         </div>
         </>
     )
