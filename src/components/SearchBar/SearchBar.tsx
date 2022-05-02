@@ -43,6 +43,7 @@ const SearchBar = ({ pokemons, large } : {
                     <input
                         type="search"
                         onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)}
+                        placeholder="Searcheth f'r pokemon"
                     />
                     <button onClick={handleSearchSubmit}>+</button>
                 </div>

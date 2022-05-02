@@ -149,6 +149,7 @@
   width: 34px;
   height: 34px;
   font-size: 28px;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
