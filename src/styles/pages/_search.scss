@@ -1,8 +1,9 @@
 main.search {
-    padding: 46px 16px 0;
+    padding: 46px 16px 48px;
 
     @include tablet-portrait {
         padding-top: 56px;
+        padding-bottom: 72px;
         max-width: 720px;
         margin: 0 auto;
     }
