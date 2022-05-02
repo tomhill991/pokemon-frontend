@@ -17,11 +17,12 @@ const SearchBar = ({ pokemons, large } : {
             setSuggestedPokemons([])
         } else {
             const filterPokemonsToGetSuggestedPokemons:IAPIPokemons = []
+            const regex = new RegExp(`^${search.toLowerCase()}`, 'i')
 
             for(let i = 0; i < pokemons.length; i ++) {
                 if(filterPokemonsToGetSuggestedPokemons.length > 4) break
                 const pokemon = pokemons[i]
-                if(pokemon.name.toLowerCase().includes(search.toLowerCase())) {
+                if(pokemon.name.toLowerCase().match(regex)) {
                     filterPokemonsToGetSuggestedPokemons.push(pokemon)
                 }
             }

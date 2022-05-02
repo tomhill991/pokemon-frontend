@@ -12,6 +12,7 @@ function App() {
     async function fetchPokemons() {
       try {
         const { data } = await axios.get(process.env.REACT_APP_POKE_API + '/pokemon?limit=100000000')
+        data.results.sort((a:any, b: any) => a.name.localeCompare(b.name))
         setPokemons(data.results)
       } catch(error) {
         console.error(error)
