@@ -45,6 +45,7 @@ const SearchBar = ({ pokemons, large, searchForNewPokemon } : {
                     <input
                         type="search"
                         onChange={(event: React.FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)}
+                        onKeyUp={(e) => e.key === 'Enter' && searchForNewPokemon(search)}
                         value={search}
                         placeholder="Searcheth f'r pokemon"
                     />
