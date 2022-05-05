@@ -15,7 +15,7 @@ const SearchBar = ({ pokemons, large, searchForNewPokemon } : {
             setSuggestedPokemons([])
         } else {
             const filterPokemonsToGetSuggestedPokemons:IAPIPokemons = []
-            const regex = new RegExp(`^${search.toLowerCase()}`, 'i')
+            const regex = new RegExp(search.toLowerCase().replace('\\', '').replace('[', ''), 'i');
 
             for(let i = 0; i < pokemons.length; i ++) {
                 if(filterPokemonsToGetSuggestedPokemons.length > 4) break
