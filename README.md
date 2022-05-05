@@ -5,7 +5,6 @@
 - [APIs](#apis)
 - [Testing](#testing)
 - [Technologies used](#technologies-used)
-- [Versions](#versions)
 
 ## Background
 What if the description of each Pokemon were to be written in Shakespearean style? Well this is
@@ -39,7 +38,7 @@ run properly
 This will start Cypress
 
 ## Technologies used
-* node v17.9.0
+* node v16.14.2
 * npm v8.5.5
 * react v18.1.0
 * typescript v4.6.4
