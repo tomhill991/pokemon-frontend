@@ -39,10 +39,8 @@ run properly
 This will start Cypress
 
 ## Technologies used
-React was used with typescript in order to enforce types across the app and (fingers crossed) reduce
-bugs. Create React App was also used to speed up development. Cypress was used for its ease of
-end to end testing
-## Versions
 * node v17.9.0
 * npm v8.5.5
 * react v18.1.0
+* typescript v4.6.4
+* react-router-dom v6.3.0
